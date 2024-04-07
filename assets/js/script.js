@@ -4,21 +4,21 @@
 
 // Generate a unique task id
     function generateTaskId() {
-  nextId++;
-  return nextId;
+        nextId++;
+        return nextId;
 }
 
 // Render tasks in appropriate lanes
     function createTaskCard(task) {
   // Create a new card
-    const newTaskCard = $("<div>");
-    newTaskCard.addClass("card my-2 task-card todo-card");
-    newTaskCard.attr("id", task.id);
+    const newTaskCard = $("<div>")
+        .addClass("card my-2 task-card todo-card")
+        .attr("id", task.id);
 
   // Create a card header
-    const newTaskCardHeader = $("<h4>");
-    newTaskCardHeader.addClass("card-header");
-    newTaskCardHeader.text(task.name);
+    const newTaskCardHeader = $("<h4>")
+        .addClass("card-header")
+        .text(task.name);
 
   // use Day.js to calculate the number of days until the due date
     const today = dayjs();
@@ -37,21 +37,20 @@
     } 
 
   // append the due date to the card
-    const newTaskCardDueDate = $("<p>");
-    newTaskCardDueDate.addClass("card-body");
-    newTaskCardDueDate.text(
-        `Due: ${dueDate.format("DD-MM-YYYY")} - Days left: ${daysUntilDue}`
+    const newTaskCardDueDate = $("<p>")
+        .addClass("card-body")
+        .text(`Due: ${dueDate.format("DD-MM-YYYY")} - Days left: ${daysUntilDue}`
     );
 
   // Create a card body
-    const newTaskCardBody = $("<p>");
-    newTaskCardBody.addClass("card-body");
-    newTaskCardBody.text(task.description);
+    const newTaskCardBody = $("<p>")
+        .addClass("card-body")
+        .text(task.description);
 
   // Create a delete button
-    const taskCardDeleteButton = $("<button>");
-    taskCardDeleteButton.addClass("btn btn-danger delete-button");
-    taskCardDeleteButton.text("Delete");
+    const taskCardDeleteButton = $("<button>")
+        .addClass("btn btn-danger delete-button")
+        .text("Delete");
     taskCardDeleteButton.click(handleDeleteTask);
 
   // Append the card header and body to the card

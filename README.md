@@ -2,7 +2,7 @@
 
 Bootcamp challenge to modify starting HTML, CSS and JavaScript code to make a simple Kanban task board functional.
 
-## Your Task
+## Description
 
 Create a simple task board application that allows a team to manage project tasks in the browser with dynamically updated features using jQuery and the [Day.js](https://day.js.org/en/) API library.
 
